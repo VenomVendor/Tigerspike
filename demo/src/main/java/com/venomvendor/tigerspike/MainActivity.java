@@ -1,7 +1,13 @@
+/*
+ * Copyright (c) 2019 VenomVendor. All rights reserved.
+ * Created by VenomVendor on 16-Feb-2019.
+ */
+
 package com.venomvendor.tigerspike;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 

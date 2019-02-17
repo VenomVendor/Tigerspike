@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2019 VenomVendor. All rights reserved.
+ * Created by VenomVendor on 16-Feb-2019.
+ */
+
 package com.venomvendor.sdk.core;
 
 import android.content.Context;
@@ -7,7 +12,7 @@ import android.support.test.runner.AndroidJUnit4;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Instrumented test, which will execute on an Android device.

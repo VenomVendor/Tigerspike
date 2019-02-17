@@ -1,8 +1,13 @@
+/*
+ * Copyright (c) 2019 VenomVendor. All rights reserved.
+ * Created by VenomVendor on 16-Feb-2019.
+ */
+
 package com.venomvendor.sdk.core;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
