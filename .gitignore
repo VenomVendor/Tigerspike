@@ -91,3 +91,11 @@ fastlane/readme.md
 #VSCODE
 .project
 .settings/
+
+!.idea/scopes/
+!.idea/copyright/
+!.idea/codeStyles/
+!.idea/saveactions_settings.xml
+!/.idea/encodings.xml
+!/.idea/kotlinc.xml
+!/.idea/externalDependencies.xml
