@@ -6,6 +6,9 @@ apply from: "$project.rootDir/scripts/root.gradle"
  * Core Dependencies
  */
 dependencies {
+    // Annotation
+    implementation deps.jetpack.annotation
+
     // Rx
     implementation deps.app.rxJava
     implementation deps.app.rxJavaExtensions

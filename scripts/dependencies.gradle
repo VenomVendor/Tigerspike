@@ -109,6 +109,7 @@ def app = [
          */
         jetpack: [
                 appcompat       : "androidx.appcompat:appcompat:${version.appcompat}",
+                annotation      : "androidx.annotation:annotation:${version.annotation}",
                 legacy          : "androidx.legacy:legacy-support-v4:${version.legacy}",
                 constraintlayout: "androidx.constraintlayout:constraintlayout:${version.constraintlayout}",
                 recyclerview    : "androidx.recyclerview:recyclerview:${version.recyclerview}",
