@@ -10,4 +10,8 @@ dependencies {
     implementation deps.app.coreKtx
 }
 
+dependencies {
+    implementation deps.test.openpojo
+}
+
 

@@ -6,6 +6,8 @@ apply from: "$project.rootDir/scripts/root.gradle"
  * Core Dependencies
  */
 dependencies {
+    implementation project(':test-helper')
+
     // Annotation
     implementation deps.jetpack.annotation
 
@@ -27,6 +29,7 @@ dependencies {
  * Test Dependencies
  */
 dependencies {
-    // Unit
+//    // Unit
     testImplementation deps.test.junit
+    implementation deps.test.openpojo
 }
