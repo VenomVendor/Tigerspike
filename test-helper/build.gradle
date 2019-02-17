@@ -1,0 +1,13 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+apply from: "$project.rootDir/scripts/root.gradle"
+
+dependencies {
+    implementation deps.app.kotlin
+    implementation deps.app.kotlinReflect
+    implementation deps.app.coreKtx
+}
+
+
