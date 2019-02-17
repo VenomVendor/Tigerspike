@@ -47,6 +47,9 @@ def version = [
         /* UNIT TEST */
         junit            : '4.12',
         openpojo         : '0.8.12',
+        mockito          : '2.23.4',
+        powermock        : '2.0.0',
+        mockitokotlin    : '2.1.0',
 
         /* ANDROID TEST */
         androidTestRunner: '1.1.1',
@@ -150,11 +153,17 @@ def app = [
  */
 def test = [
         /* jUnit Test dependencies */
-        junit   : "junit:junit:${version.junit}",
-        openpojo: "com.openpojo:openpojo:${version.openpojo}",
+        junit           : "junit:junit:${version.junit}",
+        openpojo        : "com.openpojo:openpojo:${version.openpojo}",
+        mockito         : "org.mockito:mockito-core:${version.mockito}",
+        powermockCore   : "org.powermock:powermock-core:${version.powermock}",
+        powermock       : "org.powermock:powermock-api-easymock:${version.powermock}",
+        powermockJunit  : "org.powermock:powermock-module-junit4:${version.powermock}",
+        powermockMockito: "org.powermock:powermock-api-mockito2:${version.powermock}",
+        mockitokotlin   : "com.nhaarman.mockitokotlin2:mockito-kotlin:${version.mockitokotlin}",
 
         /* Android Test dependencies */
-        android : [
+        android         : [
                 runner         : "androidx.test:runner:${version.androidTestRunner}",
                 junitExt       : "androidx.test.ext:junit:${version.junitExt}",
                 espresso       : "androidx.test.espresso:espresso-core:${version.espresso}",

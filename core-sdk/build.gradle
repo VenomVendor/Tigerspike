@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 
 apply from: "$project.rootDir/scripts/root.gradle"
 
@@ -29,7 +31,20 @@ dependencies {
  * Test Dependencies
  */
 dependencies {
-//    // Unit
+    // Kotlin
+    testImplementation deps.app.kotlin
+    testImplementation deps.app.kotlinReflect
+    testImplementation deps.app.coreKtx
+
+    // Unit
     testImplementation deps.test.junit
-    implementation deps.test.openpojo
+    testImplementation deps.test.openpojo
+
+    testImplementation deps.test.mockito
+    testImplementation deps.test.powermockCore
+    testImplementation deps.test.powermockMockito
+    testImplementation deps.test.powermockJunit
+    testImplementation deps.test.powermock
+
+    testImplementation deps.test.mockitokotlin
 }

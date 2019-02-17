@@ -1,3 +1,9 @@
+apply plugin: "jacoco"
+
+jacoco {
+    toolVersion = "0.8.2"
+}
+
 android {
     compileSdkVersion deps.buildConfig.compileSdk
     buildToolsVersion deps.buildConfig.buildTools
@@ -17,9 +23,33 @@ android {
             // Use same signing config for now.
             signingConfig signingConfigs.debug
         }
+
+        debug {
+            testCoverageEnabled true
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        abortOnError false
+    }
+    testOptions {
+        animationsDisabled = true
+        unitTests {
+            all {
+                jacoco {
+                    includeNoLocationClasses = true
+                }
+                testLogging {
+                    exceptionFormat = "full"
+                    showStandardStreams = true
+                    events 'passed', 'skipped', 'failed', 'standardOut', 'standardError'
+                }
+            }
+            returnDefaultValues = true
+            includeAndroidResources = true
+        }
     }
 }
