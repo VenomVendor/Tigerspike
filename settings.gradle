@@ -1,0 +1,4 @@
+rootProject.name = 'Tigerspike'
+
+include ':demo',
+        ':core-sdk'
