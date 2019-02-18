@@ -8,7 +8,6 @@
         <option value="reformatChangedCode" />
         <option value="rearrange" />
         <option value="fieldCanBeFinal" />
-        <option value="customUnqualifiedStaticMemberAccess" />
         <option value="missingOverrideAnnotation" />
         <option value="useBlocks" />
         <option value="unnecessaryThis" />

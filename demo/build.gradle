@@ -44,7 +44,26 @@ dependencies {
  */
 dependencies {
     testImplementation deps.test.junit
+}
 
+dependencies {
+    androidTestImplementation project(':test-helper')
+
+    androidTestImplementation deps.test.junit
+    androidTestImplementation deps.app.retrofit
+    androidTestImplementation deps.app.retrofitGson
+    androidTestImplementation deps.app.retrofitRx2
+
+    androidTestImplementation deps.test.mockwebserver
+
+    // AndroidJUnitRunner and JUnit Rules
     androidTestImplementation deps.androidTest.runner
+    androidTestImplementation deps.androidTest.junitExt
+    androidTestImplementation deps.androidTest.coreTest
+
+    // Espresso dependencies
     androidTestImplementation deps.androidTest.espresso
+    androidTestImplementation deps.androidTest.espressoContrib
+    androidTestImplementation deps.androidTest.espressoIntents
+    androidTestImplementation deps.androidTest.uiautomator
 }

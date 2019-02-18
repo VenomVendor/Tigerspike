@@ -93,7 +93,9 @@ public final class NetworkManager {
 
     @VisibleForTesting(otherwise = VisibleForTesting.NONE)
     public void setExecutor(@Nullable Retrofit executor) {
-        mRetrofit = executor;
+        synchronized (this) {
+            mRetrofit = executor;
+        }
     }
 
     /**

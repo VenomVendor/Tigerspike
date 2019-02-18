@@ -13,7 +13,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
-class TestHelper private constructor(private val mTestInstance: Any) {
+class TestHelper constructor(private val mTestInstance: Any?) {
     private var mRetrofit: Retrofit? = null
 
     /**
@@ -24,7 +24,7 @@ class TestHelper private constructor(private val mTestInstance: Any) {
      * @return Contents in file.
      */
     fun read(filePath: String): String {
-        return mTestInstance.javaClass.getResource("/$filePath").readText()
+        return mTestInstance!!.javaClass.getResource("/$filePath").readText()
     }
 
     @Synchronized
