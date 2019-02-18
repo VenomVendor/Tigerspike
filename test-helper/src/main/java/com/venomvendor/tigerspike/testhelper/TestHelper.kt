@@ -50,6 +50,7 @@ class TestHelper private constructor(private val mTestInstance: Any) {
         private val gsonCoverter: GsonConverterFactory
             get() = GsonConverterFactory.create(
                 GsonBuilder()
+                    .setDateFormat("yyyy-mm-dd'T'HH:mm:ssZ")
                     .enableComplexMapKeySerialization()
                     .setLenient()
                     .create()

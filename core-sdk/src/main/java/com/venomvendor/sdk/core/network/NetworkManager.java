@@ -58,6 +58,7 @@ public final class NetworkManager {
     private static GsonConverterFactory getGsonCoverter() {
         return GsonConverterFactory.create(
                 new GsonBuilder()
+                        .setDateFormat("yyyy-mm-dd'T'HH:mm:ssZ")
                         .enableComplexMapKeySerialization()
                         .setLenient()
                         .create()
