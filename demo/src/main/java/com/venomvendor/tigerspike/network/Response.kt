@@ -41,17 +41,13 @@ private constructor(first: T?, second: Throwable?) : Pair<T, Throwable>(first, s
          * Create Response with data
          */
         @CheckResult
-        fun <T> createResponse(data: T?): Response<T> {
-            return createResponse(data, null)
-        }
+        fun <T> createResponse(data: T?) = createResponse(data, null)
 
         /**
          * Create Response with error
          */
         @CheckResult
-        fun <T> createResponse(err: Throwable?): Response<T> {
-            return createResponse(null, err)
-        }
+        fun <T> createResponse(err: Throwable?) = createResponse(null, err)
 
         /**
          * Create Response with data &amp; error
@@ -59,7 +55,7 @@ private constructor(first: T?, second: Throwable?) : Pair<T, Throwable>(first, s
         @CheckResult
         fun <T> createResponse(data: T?, err: Throwable?): Response<T> {
             if (data == null && err == null) {
-                throw IllegalArgumentException("Data & Error are null")
+                throw IllegalArgumentException("Data & Error cannot be null")
             }
             return Response(data, err)
         }

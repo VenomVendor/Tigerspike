@@ -63,6 +63,7 @@ class GalleryListFragment : BaseFragment<FlickrViewModel>(), OnItemClickListener
     }
 
     private fun updateLayoutManager() {
+//        feed_list.layoutManager = LinearLayoutManager(context)
         feed_list.layoutManager = GridLayoutManager(context, 2)
     }
 

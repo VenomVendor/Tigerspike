@@ -55,6 +55,7 @@ def version = [
         /* ANDROID TEST */
         androidTestRunner: '1.1.1',
         junitExt         : '1.1.0',
+        coreTest         : '1.1.0',
         espresso         : '3.1.1',
         uiautomator      : '2.2.0',
 ]
@@ -168,6 +169,7 @@ def test = [
         android         : [
                 runner         : "androidx.test:runner:${version.androidTestRunner}",
                 junitExt       : "androidx.test.ext:junit:${version.junitExt}",
+                coreTest       : "androidx.test:core:${version.coreTest}",
                 espresso       : "androidx.test.espresso:espresso-core:${version.espresso}",
                 espressoContrib: "androidx.test.espresso:espresso-contrib:${version.espresso}",
                 espressoIntents: "androidx.test.espresso:espresso-intents:${version.espresso}",
