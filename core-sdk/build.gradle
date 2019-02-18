@@ -1,34 +1,51 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 
-android {
-    compileSdkVersion 28
+apply from: "$project.rootDir/scripts/root.gradle"
 
+/*
+ * Core Dependencies
+ */
+dependencies {
+    implementation project(':test-helper')
 
+    // Annotation
+    implementation deps.jetpack.annotation
 
-    defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+    // Rx
+    implementation deps.app.rxJava
+    implementation deps.app.rxJavaExtensions
+    implementation deps.app.rxAndroid
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    // JSON Parser
+    implementation deps.app.gson
 
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-
+    // Webservice
+    implementation deps.app.retrofit
+    implementation deps.app.retrofitGson
+    implementation deps.app.retrofitRx2
 }
 
+/*
+ * Test Dependencies
+ */
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // Kotlin
+    testImplementation deps.app.kotlin
+    testImplementation deps.app.kotlinReflect
+    testImplementation deps.app.coreKtx
 
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    // Unit
+    testImplementation deps.test.junit
+    testImplementation deps.test.openpojo
+
+    testImplementation deps.test.mockito
+    testImplementation deps.test.powermockCore
+    testImplementation deps.test.powermockMockito
+    testImplementation deps.test.powermockJunit
+    testImplementation deps.test.powermock
+
+    testImplementation deps.test.mockitokotlin
+    testImplementation deps.test.mockwebserver
 }

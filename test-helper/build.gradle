@@ -1,0 +1,23 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+apply from: "$project.rootDir/scripts/root.gradle"
+
+dependencies {
+    implementation deps.app.kotlin
+    implementation deps.app.kotlinReflect
+    implementation deps.app.coreKtx
+}
+
+dependencies {
+    implementation deps.test.openpojo
+
+    // Webservice
+    implementation deps.app.retrofit
+    implementation deps.app.retrofitGson
+    implementation deps.app.retrofitRx2
+    implementation deps.test.mockwebserver
+}
+
+
