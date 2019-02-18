@@ -12,6 +12,12 @@ dependencies {
 
 dependencies {
     implementation deps.test.openpojo
+
+    // Webservice
+    implementation deps.app.retrofit
+    implementation deps.app.retrofitGson
+    implementation deps.app.retrofitRx2
+    implementation deps.test.mockwebserver
 }
 
 

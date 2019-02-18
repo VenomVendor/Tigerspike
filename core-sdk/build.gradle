@@ -47,4 +47,5 @@ dependencies {
     testImplementation deps.test.powermock
 
     testImplementation deps.test.mockitokotlin
+    testImplementation deps.test.mockwebserver
 }

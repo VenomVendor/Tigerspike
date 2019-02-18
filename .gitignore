@@ -99,3 +99,4 @@ fastlane/readme.md
 !/.idea/encodings.xml
 !/.idea/kotlinc.xml
 !/.idea/externalDependencies.xml
+*.exec

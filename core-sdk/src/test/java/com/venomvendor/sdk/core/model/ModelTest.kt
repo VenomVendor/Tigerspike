@@ -37,17 +37,17 @@ class ModelTest {
     }
 
     @Test
-    fun isNoSuccessWhenJunk() {
+    fun isSuccessWhenJunk() {
         val feed = PublicFeed()
         feed.stat = "junk"
 
-        assertFalse(feed.isSuccess)
+        assertTrue(feed.isSuccess)
     }
 
     @Test
-    fun isNoSuccessWhenNull() {
+    fun isSuccessWhenNull() {
         val feed = PublicFeed()
-        assertFalse(feed.isSuccess)
+        assertTrue(feed.isSuccess)
     }
 
     @Test

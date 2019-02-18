@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 
 public class Status {
 
-    private static final String STAT_OK = "ok";
+    private static final String STAT_FAIL = "fail";
 
     @SerializedName("stat")
     private String stat;
@@ -23,7 +23,8 @@ public class Status {
     private String message;
 
     public boolean isSuccess() {
-        return STAT_OK.equals(stat);
+        // TODO: Not a valid check, but okay for now.
+        return !STAT_FAIL.equals(stat);
     }
 
     public String getStat() {

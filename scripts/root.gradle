@@ -44,7 +44,6 @@ android {
                 }
                 testLogging {
                     exceptionFormat = "full"
-                    showStandardStreams = true
                     events 'passed', 'skipped', 'failed', 'standardOut', 'standardError'
                 }
             }
@@ -52,4 +51,17 @@ android {
             includeAndroidResources = true
         }
     }
+    sourceSets {
+        test {
+            resources.srcDirs += ['src/test/resources']
+            resources.srcDirs += ['app/src/test/resources']
+        }
+        androidTest {
+            resources.srcDirs += ['src/androidTest/resources']
+            resources.srcDirs += ['app/src/androidTest/resources']
+        }
+    }
+    useLibrary 'android.test.runner'
+    useLibrary 'android.test.base'
+    useLibrary 'android.test.mock'
 }
