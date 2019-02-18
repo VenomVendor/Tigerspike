@@ -1,0 +1,67 @@
+apply plugin: "jacoco"
+
+jacoco {
+    toolVersion = "0.8.2"
+}
+
+android {
+    compileSdkVersion deps.buildConfig.compileSdk
+    buildToolsVersion deps.buildConfig.buildTools
+
+    defaultConfig {
+        minSdkVersion deps.buildConfig.minSdk
+        targetSdkVersion deps.buildConfig.targetSdk
+        versionCode deps.buildConfig.versionCode
+        versionName deps.buildConfig.versionName
+        testInstrumentationRunner deps.buildConfig.testInstrumentationRunner
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            // Use same signing config for now.
+            signingConfig signingConfigs.debug
+        }
+
+        debug {
+            testCoverageEnabled true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        abortOnError false
+    }
+    testOptions {
+        animationsDisabled = true
+        unitTests {
+            all {
+                jacoco {
+                    includeNoLocationClasses = true
+                }
+                testLogging {
+                    exceptionFormat = "full"
+                    events 'passed', 'skipped', 'failed', 'standardOut', 'standardError'
+                }
+            }
+            returnDefaultValues = true
+            includeAndroidResources = true
+        }
+    }
+    sourceSets {
+        test {
+            resources.srcDirs += ['src/test/resources']
+            resources.srcDirs += ['app/src/test/resources']
+        }
+        androidTest {
+            resources.srcDirs += ['src/androidTest/resources']
+            resources.srcDirs += ['app/src/androidTest/resources']
+        }
+    }
+    useLibrary 'android.test.runner'
+    useLibrary 'android.test.base'
+    useLibrary 'android.test.mock'
+}

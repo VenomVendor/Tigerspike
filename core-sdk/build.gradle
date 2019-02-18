@@ -1,0 +1,51 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
+
+apply from: "$project.rootDir/scripts/root.gradle"
+
+/*
+ * Core Dependencies
+ */
+dependencies {
+    implementation project(':test-helper')
+
+    // Annotation
+    implementation deps.jetpack.annotation
+
+    // Rx
+    implementation deps.app.rxJava
+    implementation deps.app.rxJavaExtensions
+    implementation deps.app.rxAndroid
+
+    // JSON Parser
+    implementation deps.app.gson
+
+    // Webservice
+    implementation deps.app.retrofit
+    implementation deps.app.retrofitGson
+    implementation deps.app.retrofitRx2
+}
+
+/*
+ * Test Dependencies
+ */
+dependencies {
+    // Kotlin
+    testImplementation deps.app.kotlin
+    testImplementation deps.app.kotlinReflect
+    testImplementation deps.app.coreKtx
+
+    // Unit
+    testImplementation deps.test.junit
+    testImplementation deps.test.openpojo
+
+    testImplementation deps.test.mockito
+    testImplementation deps.test.powermockCore
+    testImplementation deps.test.powermockMockito
+    testImplementation deps.test.powermockJunit
+    testImplementation deps.test.powermock
+
+    testImplementation deps.test.mockitokotlin
+    testImplementation deps.test.mockwebserver
+}

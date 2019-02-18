@@ -1,0 +1,19 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    apply from: "$project.rootDir/scripts/dependencies.gradle"
+
+    addRepos(repositories)
+    dependencies {
+        classpath deps.buildPlugin.android
+        classpath deps.buildPlugin.kotlin
+        classpath deps.buildPlugin.spotless
+        classpath deps.buildPlugin.safeArgs
+    }
+}
+
+subprojects {
+    addRepos(buildscript.repositories)
+    addRepos(repositories)
+}
+
+apply from: "$project.rootDir/scripts/formatter.gradle"
