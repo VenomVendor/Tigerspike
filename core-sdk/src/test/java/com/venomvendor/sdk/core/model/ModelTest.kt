@@ -7,7 +7,6 @@ package com.venomvendor.sdk.core.model
 
 import com.openpojo.reflection.impl.PojoClassFactory
 import com.openpojo.validation.ValidatorBuilder
-import com.openpojo.validation.rule.impl.NoNestedClassRule
 import com.openpojo.validation.rule.impl.NoStaticExceptFinalRule
 import com.openpojo.validation.test.impl.DefaultValuesNullTester
 import com.openpojo.validation.test.impl.GetterTester
@@ -59,7 +58,6 @@ class ModelTest {
                 DefaultValuesNullTester()
             )
             .with(
-                NoNestedClassRule(),
                 NoStaticExceptFinalRule()
             )
             .build()

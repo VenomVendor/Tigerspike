@@ -1,4 +1,7 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 apply from: "$project.rootDir/scripts/root.gradle"
 
@@ -11,8 +14,29 @@ dependencies {
     // Core
     implementation project(':core-sdk')
 
+    // Kotlin
+    implementation deps.app.kotlin
+    implementation deps.app.kotlinReflect
+    implementation deps.app.coreKtx
+
     implementation deps.jetpack.appcompat
+    implementation deps.jetpack.legacy
     implementation deps.jetpack.constraintlayout
+
+    implementation deps.lifecycle.viewmodel
+    implementation deps.lifecycle.reactivestreams
+
+    implementation deps.navigation.navigationFragment
+    implementation deps.navigation.navigationUi
+
+    implementation deps.app.rxJava
+    implementation deps.app.rxJavaExtensions
+    implementation deps.app.rxAndroid
+
+    implementation deps.app.material
+
+    implementation deps.app.glide
+    kapt deps.app.glideCompiler
 }
 
 /*
